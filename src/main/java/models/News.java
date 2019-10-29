@@ -6,12 +6,11 @@ import java.util.Objects;
 public class News {
     private int id;
     private String content;
-    private String type;
+    private String type="general";
     private Timestamp submittedOn;
 
     public News(String content){
         this.content=content;
-        this.type="general";
     }
 
     public String getType() {
