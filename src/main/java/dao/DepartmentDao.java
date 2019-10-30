@@ -12,6 +12,7 @@ public interface DepartmentDao {
 
     //READ
     Department findById(int id);
+    List<Department> getAll();
 
 
 

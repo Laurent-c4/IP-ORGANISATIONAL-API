@@ -40,6 +40,15 @@ public class Sql2oDepartmentDao implements DepartmentDao {
         }
     }
 
+    @Override
+    public List<Department> getAll(){
+        try (Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM departments")
+                    .executeAndFetch(Department.class);
+        }
+    }
+
+
 
     @Override
     public void clearAll(){

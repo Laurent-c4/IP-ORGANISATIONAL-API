@@ -58,4 +58,14 @@ public class Sql2oDepartmentDaoTest {
         Department department=setupNewDepartment();
         assertEquals(department,departmentDao.findById(department.getId()));
     }
+
+    @Test
+    public void getAll_ReturnsAllDepartments() {
+        Department department=setupNewDepartment();
+        Department otherDepartment=new Department("discipline","mboko",6);
+        departmentDao.add(otherDepartment);
+        Department otherOtherDepartment=new Department("health","medicine",8);
+        departmentDao.add(otherOtherDepartment);
+        assertEquals(3,departmentDao.getAll().size());
+    }
 }
